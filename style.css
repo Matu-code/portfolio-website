@@ -3,6 +3,33 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --p-color: rgb(85, 85, 85);
+    --black: black;
+    --white: white;
+    --text-decoration: rgb(181, 181, 181);
+    --btn-border-color: rgb(53, 53, 53);
+    --background-button1-hover: rgb(0, 0, 0);
+    --border-button1-hover: rgb(255, 255, 255);
+    --border-color: rgb(163, 163, 163);
+    --background: rgb(250, 250, 250);
+    --a-hover-color: grey;
+}
+
+/* Dark Mode Variables */
+/* body.dark-mode {
+  --p-color: rgb(170, 170, 170);
+  --black: white;
+  --white: black;
+  --text-decoration: rgb(100, 100, 100);
+  --btn-border-color: rgb(200, 200, 200);
+  --background-button1-hover: rgb(255, 255, 255);
+  --border-button1-hover: rgb(0, 0, 0);
+  --border-color: rgb(100, 100, 100);
+  --background: rgb(20, 20, 20);
+  --a-hover-color: rgb(100, 100, 100);
+} */
+
 
 * {
     margin: 0;
@@ -11,6 +38,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background-color: var(--background);
+    color: var(--black);
 }
 
 html{
@@ -18,7 +47,7 @@ html{
 }
 
 p {
-    color: rgb(85, 85, 85);
+    color: var(--p-color);
 }
 
 /* TRANSITION */
@@ -48,16 +77,16 @@ nav {
 }
 
 a {
-    color: black;
+    color: var(--black);
     text-decoration: none;
-    text-decoration-color: white;
+    text-decoration-color: var(--white);
 }
 
 a:hover {
-    color: grey;
+    color: var(--a-hover-color);
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color: rgb(181, 181, 181);
+    text-decoration-color: var(--text-decoration);
 }
 
 .logo {
@@ -91,7 +120,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: var(--black);
   transition: all 0.3 ease-in-out;
 }
 
@@ -111,7 +140,7 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: black;
+  color: var(--black);
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -233,7 +262,7 @@ section {
 
 .btn-color-1, 
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: var(--btn-border-color) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -243,12 +272,12 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white
+  background: var(--btn-border-color);
+  color: var(--white)
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: var(--background-button1-hover);
 }
 
 .btn-color-2 {
@@ -256,12 +285,27 @@ section {
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: var(--border-button1-hover) 0.1rem solid;
 }
 
 .btn-container {
   gap: 1rem
 }
+
+/* .dark-mode-toggle {
+  position: absolute;
+  z-index: 100;
+  top: 1em;
+  right: 1em;
+  color: var(--foreground);
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+} */
 
 /* ABOUT */
 
@@ -297,10 +341,10 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: var(--white);
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border: var(--btn-border-color) 0.1rem solid;
+  border-color: var(--border-color);
   text-align: center;
 }
 
@@ -322,7 +366,7 @@ section {
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
+  color: varl(--p-color);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -361,8 +405,8 @@ article .icon {
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  border-color: var(--border-color);
+  background: var(--background);
 }
 
 .project-img {
@@ -373,12 +417,12 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: black
+  color: var(--black)
 }
 
 .project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+  color: var(--black);
+  border-color: var(--border-color);
 }
 
 /* CONTACT */
@@ -394,9 +438,9 @@ article .icon {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  border: var(--btn-border-color) 0.1rem solid;
+  border-color: var(--border-color);
+  background: var(--background);
   margin: 2rem auto;
   padding: 0.5rem;
 }
